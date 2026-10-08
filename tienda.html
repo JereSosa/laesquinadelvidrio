@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>La Esquina del Vidrio — Tienda</title>
+<meta name="description" content="Tienda de La Esquina del Vidrio: elegí el vidrio, cargá tus medidas y sumalo al carrito. Vista previa de la tienda online.">
+<meta name="robots" content="noindex">
+<meta property="og:type" content="website">
+<meta property="og:title" content="La Esquina del Vidrio — Tienda">
+<meta property="og:description" content="Elegí el vidrio, cargá tus medidas y sumalo al carrito.">
+<meta property="og:image" content="https://jeresosa.github.io/laesquinadelvidrio/assets/85243ea6.jpg">
+<link rel="icon" href="assets/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&amp;family=Manrope:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+<script src="js/data.js" defer></script>
+<script src="js/tienda.js" defer></script>
+</head>
+<body class="p-shop">
+
+<header class="hdr">
+<div class="wrap hdr-in">
+<a class="logo-chip" href="index.html" aria-label="Volver al inicio"><img src="assets/logo.png" alt="La Esquina del Vidrio S.R.L."></a>
+<div class="search">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg>
+<label for="q" class="sr">Buscar productos</label>
+<input id="q" type="search" placeholder="Buscar: laminado, espejo, DVH…" value="">
+</div>
+<span style="flex: 1" class="hide-sm"></span>
+<a class="btn btn-ghost hide-sm" href="index.html" style="min-height: 44px">Inicio</a>
+<button class="icon-btn" id="open-cart" type="button" aria-label="Abrir carrito">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 8h14l-1.2 12H6.2L5 8z"></path><path d="M9 8a3 3 0 0 1 6 0"></path></svg>
+<span class="hide-sm">Carrito</span>
+<span class="badge" id="cart-badge" hidden></span>
+</button>
+</div>
+</header>
+
+<main class="wrap" style="padding-top: 48px; padding-bottom: 120px">
+<nav aria-label="Ruta" class="fm" style="font-size: 12px; letter-spacing: .12em; color: #7F948F; margin-bottom: 14px"><a href="index.html" style="color: #9FB2AD; text-decoration: none">INICIO</a> / TIENDA</nav>
+<div style="display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; flex-wrap: wrap; margin-bottom: 40px">
+<h1 class="fd" style="margin: 0; font-size: clamp(64px,9vw,128px); line-height: .84; font-weight: 900">Tienda</h1>
+<p style="margin: 0; max-width: 440px; color: #9FB2AD">Elegí el vidrio, cargá tus medidas y sumalo al carrito. Los precios se muestran en cuanto los cargamos en el sistema.</p>
+</div>
+
+<div class="layout">
+<aside class="side" aria-label="Categorías">
+<span class="side-title fm" style="font-size: 11px; letter-spacing: .16em; color: #7F948F; padding: 0 14px 8px">CATEGORÍAS</span>
+<div id="cats"></div>
+</aside>
+
+<div class="content">
+<div style="display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; margin-bottom: 20px">
+<span class="fm" id="result" style="font-size: 13px; color: #9FB2AD"></span>
+<div class="seg" role="group" aria-label="Ordenar">
+<button type="button" id="sort-feat" class="seg-on" data-sort="feat">Destacados</button>
+<button type="button" id="sort-az" data-sort="az">A–Z</button>
+</div>
+</div>
+<div id="no-results" hidden style="padding: 64px 24px; text-align: center; border: 1.5px dashed rgba(233,241,238,.18); border-radius: 16px; color: #9FB2AD">No encontramos productos para esa búsqueda.</div>
+<div class="pgrid" id="pgrid"></div>
+</div>
+</div>
+</main>
+
+<div id="cfg-root"></div>
+<div id="cart-root"></div>
+
+</body>
+</html>
